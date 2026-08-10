@@ -1,0 +1,40 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = 'Portfólio e receitas de cozinha.' } = Astro.props;
+---
+
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <div class="container">
+      <header class="site-header">
+        <a href="/" class="logo">seu nome aqui</a>
+        <nav>
+          <a href="/">início</a>
+          <a href="/receitas/">receitas</a>
+          <a href="/sobre/">sobre</a>
+        </nav>
+      </header>
+
+      <main>
+        <slot />
+      </main>
+
+      <footer>
+        <p>&copy; {new Date().getFullYear()} — feito com Astro.</p>
+      </footer>
+    </div>
+  </body>
+</html>

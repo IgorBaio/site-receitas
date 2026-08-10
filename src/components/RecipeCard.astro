@@ -1,0 +1,25 @@
+---
+interface Props {
+  slug: string;
+  title: string;
+  categoria: string;
+  dificuldade: string;
+  tempoPreparo: number;
+  imagemCapa: string;
+}
+
+const { slug, title, categoria, dificuldade, tempoPreparo, imagemCapa } = Astro.props;
+---
+
+<a href={`/receitas/${slug}/`}>
+  <article class="recipe-card">
+    <span class="tag">{categoria}</span>
+    <img src={imagemCapa} alt={title} />
+    <h3>{title}</h3>
+    <div class="recipe-meta">
+      <span>{tempoPreparo} min</span>
+      <span>&middot;</span>
+      <span>{dificuldade}</span>
+    </div>
+  </article>
+</a>

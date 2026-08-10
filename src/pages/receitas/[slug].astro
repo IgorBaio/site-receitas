@@ -1,0 +1,48 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  const receitas = await getCollection('receitas');
+  return receitas.map((r) => ({
+    params: { slug: r.slug },
+    props: { receita: r },
+  }));
+}
+
+const { receita } = Astro.props;
+const { Content } = await receita.render();
+const { title, categoria, dificuldade, tempoPreparo, porcoes, imagemCapa, ingredientes } =
+  receita.data;
+---
+
+<Layout title={`${title} | seu nome aqui`}>
+  <p class="eyebrow">{categoria}</p>
+  <h1>{title}</h1>
+
+  <div class="recipe-meta" style="font-size: 0.85rem; margin-bottom: 1.5rem;">
+    <span>{tempoPreparo} min</span>
+    <span>&middot;</span>
+    <span>{porcoes} porções</span>
+    <span>&middot;</span>
+    <span>{dificuldade}</span>
+  </div>
+
+  <img
+    src={imagemCapa}
+    alt={title}
+    style="width: 100%; max-height: 420px; object-fit: cover; border: 1px solid var(--line); margin-bottom: 2rem;"
+  />
+
+  <div style="display: grid; grid-template-columns: 1fr 2fr; gap: 2.5rem;">
+    <aside>
+      <h2 style="font-size: 1.1rem;">Ingredientes</h2>
+      <ul style="padding-left: 1.1rem; color: var(--ink-soft);">
+        {ingredientes.map((ing: string) => <li>{ing}</li>)}
+      </ul>
+    </aside>
+    <article>
+      <Content />
+    </article>
+  </div>
+</Layout>

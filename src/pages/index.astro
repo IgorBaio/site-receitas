@@ -1,0 +1,42 @@
+---
+import Layout from '../layouts/Layout.astro';
+import RecipeCard from '../components/RecipeCard.astro';
+import { getCollection } from 'astro:content';
+
+const receitas = (await getCollection('receitas')).sort(
+  (a, b) => b.data.data.data.valueOf() - a.data.data.data.valueOf()
+);
+const destaque = receitas.find((r) => r.data.destaque) ?? receitas[0];
+const recentes = receitas.filter((r) => r.slug !== destaque?.slug).slice(0, 6);
+---
+
+<Layout title="Início | seu nome aqui">
+  <section style="padding: 3rem 0;">
+    <p class="eyebrow">receita em destaque</p>
+    {destaque && (
+      <a href={`/receitas/${destaque.slug}/`}>
+        <h1>{destaque.data.title}</h1>
+      </a>
+    )}
+    <p style="max-width: 55ch; color: var(--ink-soft);">
+      Bem-vindo(a) ao meu portfólio de gastronomia. Aqui eu registro receitas,
+      técnicas e o que estou aprendendo pelo caminho.
+    </p>
+  </section>
+
+  <section>
+    <p class="eyebrow">últimas receitas</p>
+    <div class="grid">
+      {recentes.map((r) => (
+        <RecipeCard
+          slug={r.slug}
+          title={r.data.title}
+          categoria={r.data.categoria}
+          dificuldade={r.data.dificuldade}
+          tempoPreparo={r.data.tempoPreparo}
+          imagemCapa={r.data.imagemCapa}
+        />
+      ))}
+    </div>
+  </section>
+</Layout>

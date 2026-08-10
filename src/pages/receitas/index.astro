@@ -1,0 +1,27 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import RecipeCard from '../../components/RecipeCard.astro';
+import { getCollection } from 'astro:content';
+
+const receitas = (await getCollection('receitas')).sort(
+  (a, b) => b.data.data.valueOf() - a.data.data.valueOf()
+);
+---
+
+<Layout title="Receitas | seu nome aqui">
+  <p class="eyebrow">catálogo</p>
+  <h1>Receitas</h1>
+
+  <div class="grid">
+    {receitas.map((r) => (
+      <RecipeCard
+        slug={r.slug}
+        title={r.data.title}
+        categoria={r.data.categoria}
+        dificuldade={r.data.dificuldade}
+        tempoPreparo={r.data.tempoPreparo}
+        imagemCapa={r.data.imagemCapa}
+      />
+    ))}
+  </div>
+</Layout>

@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500&family=Work+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap');
+
+:root {
+  /* cor — inspirada em papel manteiga, tinta e páprica */
+  --bg: #efe7d8;
+  --surface: #faf6ee;
+  --ink: #2b2420;
+  --ink-soft: #6b6156;
+  --accent: #b33f2e;      /* páprica */
+  --accent-soft: #e4c9a6; /* tostado */
+  --olive: #6b7a4f;
+  --line: #d8cdb8;
+
+  /* tipografia */
+  --font-display: 'Fraunces', serif;
+  --font-body: 'Work Sans', sans-serif;
+  --font-mono: 'IBM Plex Mono', monospace;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+body {
+  background-image:
+    radial-gradient(var(--line) 1px, transparent 1px);
+  background-size: 22px 22px;
+  background-position: -11px -11px;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  margin: 0 0 0.4em;
+  color: var(--ink);
+}
+
+h1 { font-size: clamp(2.2rem, 5vw, 3.6rem); font-weight: 700; }
+h2 { font-size: clamp(1.5rem, 3vw, 2.1rem); }
+
+a { color: inherit; text-decoration: none; }
+
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 0;
+  border-bottom: 2px solid var(--ink);
+}
+
+.site-header nav {
+  display: flex;
+  gap: 1.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.site-header nav a {
+  border-bottom: 2px solid transparent;
+  padding-bottom: 2px;
+}
+.site-header nav a:hover,
+.site-header nav a:focus-visible {
+  border-color: var(--accent);
+}
+
+.logo {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.3rem;
+}
+
+/* ---- cartão de receita: cartão de índice com borda rasgada ---- */
+.recipe-card {
+  position: relative;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  padding: 1.4rem 1.2rem 1.2rem;
+  clip-path: polygon(
+    0% 2%, 4% 0%, 9% 1.5%, 14% 0%, 19% 1.5%, 24% 0%, 29% 1.5%, 34% 0%,
+    39% 1.5%, 44% 0%, 49% 1.5%, 54% 0%, 59% 1.5%, 64% 0%, 69% 1.5%,
+    74% 0%, 79% 1.5%, 84% 0%, 89% 1.5%, 94% 0%, 100% 2%,
+    100% 100%, 0% 100%
+  );
+  transition: transform 0.15s ease;
+}
+
+.recipe-card:hover { transform: translateY(-3px); }
+
+.recipe-card .tag {
+  position: absolute;
+  top: -14px;
+  right: 18px;
+  transform: rotate(4deg);
+  background: var(--olive);
+  color: var(--surface);
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  border-radius: 2px;
+}
+
+.recipe-card img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border: 1px solid var(--line);
+  margin-bottom: 0.8rem;
+}
+
+.recipe-card h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.3rem;
+}
+
+.recipe-meta {
+  display: flex;
+  gap: 0.8rem;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--ink-soft);
+  margin-top: 0.5rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 2rem 1.6rem;
+  padding: 2.5rem 0;
+}
+
+.btn {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  background: var(--ink);
+  color: var(--surface);
+  padding: 0.7rem 1.3rem;
+  border: none;
+}
+.btn:hover { background: var(--accent); }
+
+footer {
+  border-top: 2px solid var(--ink);
+  margin-top: 3rem;
+  padding: 1.5rem 0;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--ink-soft);
+}
