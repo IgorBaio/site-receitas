@@ -112,6 +112,41 @@ a { color: inherit; text-decoration: none; }
   }
 }
 
+@media (orientation: landscape) and (max-height: 600px) {
+  .site-header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .site-header nav {
+    display: flex;
+    flex-direction: row;
+    gap: 0.8rem;
+    flex-wrap: wrap;
+    width: auto;
+  }
+
+  .site-header nav a {
+    display: inline;
+    width: auto;
+    max-width: none;
+    white-space: nowrap;
+    border-bottom: 2px solid transparent;
+    padding: 0 0 2px 0;
+  }
+
+  .site-header nav a:hover,
+  .site-header nav a:focus-visible {
+    border-color: var(--accent);
+  }
+
+  .logo {
+    font-size: 1rem;
+  }
+}
+
 .logo {
   font-family: var(--font-display);
   font-weight: 700;
