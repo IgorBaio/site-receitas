@@ -39,7 +39,7 @@ Coloque a foto de capa em `public/images/`.
 
 ## O que falta preencher
 
-- Trocar "seu nome aqui" no `Layout.astro` e na página `sobre.astro`
+- Trocar "Igor Baio Soares" no `Layout.astro` e na página `sobre.astro`
 - Trocar `SEU-USUARIO` no `astro.config.mjs`
 - Adicionar fotos reais em `public/images/`
 - Escrever mais receitas em `src/content/receitas/`

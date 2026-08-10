@@ -121,7 +121,7 @@ site-receitas/
 
 ## Pendências / próximos passos
 
-- Trocar "seu nome aqui" no `Layout.astro` e em `sobre.astro`
+- Trocar "Igor Baio Soares" no `Layout.astro` e em `sobre.astro`
 - Trocar `SEU-USUARIO` e nome do repo em `astro.config.mjs` (campos `site` e `base`)
 - Adicionar fotos reais em `public/images/`
 - Escrever mais receitas em `src/content/receitas/`

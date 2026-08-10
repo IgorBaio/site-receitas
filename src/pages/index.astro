@@ -11,7 +11,7 @@ const destaque = receitas.find((r) => r.data.destaque) ?? receitas[0];
 const recentes = receitas.filter((r) => r.slug !== destaque?.slug).slice(0, 6);
 ---
 
-<Layout title="Início | seu nome aqui">
+<Layout title="Início | Igor Baio Soares">
   <section style="padding: 3rem 0;">
     <p class="eyebrow">receita em destaque</p>
     {destaque && (
