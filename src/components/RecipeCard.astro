@@ -8,13 +8,15 @@ interface Props {
   imagemCapa: string;
 }
 
+const base = import.meta.env.BASE_URL ?? '/';
 const { slug, title, categoria, dificuldade, tempoPreparo, imagemCapa } = Astro.props;
+const imageSrc = `${base}${imagemCapa.replace(/^\/+/, '')}`;
 ---
 
-<a href={`/receitas/${slug}/`}>
+<a href={`${base}receitas/${slug}/`}>
   <article class="recipe-card">
     <span class="tag">{categoria}</span>
-    <img src={imagemCapa} alt={title} />
+    <img src={imageSrc} alt={title} />
     <h3>{title}</h3>
     <div class="recipe-meta">
       <span>{tempoPreparo} min</span>

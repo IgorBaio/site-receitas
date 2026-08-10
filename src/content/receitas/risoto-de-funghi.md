@@ -5,7 +5,7 @@ categoria: "massas"
 dificuldade: "médio"
 tempoPreparo: 40
 porcoes: 4
-imagemCapa: "/images/risoto-funghi.jpg"
+imagemCapa: "/images/risot_funghi.jpg"
 tags: ["italiano", "vegetariano"]
 ingredientes:
   - "300g de arroz arbório"

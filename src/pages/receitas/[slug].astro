@@ -10,10 +10,12 @@ export async function getStaticPaths() {
   }));
 }
 
+const base = import.meta.env.BASE_URL ?? '/';
 const { receita } = Astro.props;
 const { Content } = await receita.render();
 const { title, categoria, dificuldade, tempoPreparo, porcoes, imagemCapa, ingredientes } =
   receita.data;
+const imageSrc = `${base}${imagemCapa.replace(/^\/+/, '')}`;
 ---
 
 <Layout title={`${title} | seu nome aqui`}>
@@ -29,7 +31,7 @@ const { title, categoria, dificuldade, tempoPreparo, porcoes, imagemCapa, ingred
   </div>
 
   <img
-    src={imagemCapa}
+    src={imageSrc}
     alt={title}
     style="width: 100%; max-height: 420px; object-fit: cover; border: 1px solid var(--line); margin-bottom: 2rem;"
   />

@@ -3,8 +3,9 @@ import Layout from '../layouts/Layout.astro';
 import RecipeCard from '../components/RecipeCard.astro';
 import { getCollection } from 'astro:content';
 
+const base = import.meta.env.BASE_URL ?? '/';
 const receitas = (await getCollection('receitas')).sort(
-  (a, b) => b.data.data.data.valueOf() - a.data.data.data.valueOf()
+  (a, b) => b.data.data.valueOf() - a.data.data.valueOf()
 );
 const destaque = receitas.find((r) => r.data.destaque) ?? receitas[0];
 const recentes = receitas.filter((r) => r.slug !== destaque?.slug).slice(0, 6);
@@ -14,7 +15,7 @@ const recentes = receitas.filter((r) => r.slug !== destaque?.slug).slice(0, 6);
   <section style="padding: 3rem 0;">
     <p class="eyebrow">receita em destaque</p>
     {destaque && (
-      <a href={`/receitas/${destaque.slug}/`}>
+      <a href={`${base}receitas/${destaque.slug}/`}>
         <h1>{destaque.data.title}</h1>
       </a>
     )}
