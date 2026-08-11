@@ -2,11 +2,114 @@
 import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout title="Sobre | Igor Baio Soares">
-  <p class="eyebrow">sobre</p>
-  <h1>Minha história</h1>
-  <p style="max-width: 60ch; color: var(--ink-soft);">
-    Escreva aqui como você começou na gastronomia, o que te motiva a cozinhar
-    e o que as pessoas podem esperar encontrar por aqui.
-  </p>
+<Layout
+  title="Sobre | Receitas Baio"
+  description="Conheça a história por trás do Receitas Baio, do hobby de cozinhar à formação em Gastronomia."
+>
+  <section style="padding: 3rem 0 1rem;">
+    <p class="eyebrow">sobre</p>
+    <h1>Sobre o Receitas Baio</h1>
+    <p style="max-width: 60ch; color: var(--ink-soft);">
+      Da paixão por cozinhar ao aprendizado em Gastronomia.
+    </p>
+  </section>
+
+  <section class="about-section">
+    <p style="max-width: 65ch;">
+      O <strong>Receitas Baio</strong> nasceu de uma paixão que começou de forma
+      simples: cozinhar por hobby.
+    </p>
+    <p style="max-width: 65ch; color: var(--ink-soft);">
+      O que começou como curiosidade e vontade de experimentar novas receitas
+      foi, aos poucos, se transformando em um interesse cada vez maior pelo
+      universo da gastronomia. Hoje, esse caminho continua com uma nova etapa:
+      o início de uma formação em <strong>Gastronomia</strong>, buscando
+      aprofundar conhecimentos, técnicas e experiências dentro da cozinha.
+    </p>
+    <p style="max-width: 65ch; color: var(--ink-soft);">
+      O Receitas Baio acompanha justamente essa jornada.
+    </p>
+  </section>
+
+  <section class="about-section">
+    <h2>Um espaço para compartilhar receitas</h2>
+    <p style="max-width: 65ch; color: var(--ink-soft);">
+      O principal objetivo do site é compartilhar receitas de forma clara,
+      prática e acessível.
+    </p>
+    <p style="max-width: 65ch; color: var(--ink-soft);">
+      Aqui você encontrará diferentes preparações, desde receitas simples
+      para o dia a dia até pratos que podem transformar uma ocasião especial.
+      A ideia é apresentar cada receita de maneira organizada, facilitando
+      tanto para quem está começando a cozinhar quanto para quem já tem
+      experiência na cozinha.
+    </p>
+  </section>
+
+  <section class="about-section">
+    <h2>Aprender também faz parte da cozinha</h2>
+    <p style="max-width: 65ch; color: var(--ink-soft);">
+      A gastronomia é um universo de constante aprendizado.
+    </p>
+    <p style="max-width: 65ch; color: var(--ink-soft);">
+      Cada receita apresenta uma oportunidade de entender melhor
+      ingredientes, técnicas, combinações de sabores e diferentes formas de
+      preparo. Por isso, o Receitas Baio também representa uma jornada de
+      aprendizado e experimentação.
+    </p>
+    <p style="max-width: 65ch; color: var(--ink-soft);">
+      Conforme novos conhecimentos são adquiridos durante a formação em
+      Gastronomia, eles passam a fazer parte dessa experiência e ajudam a
+      construir um conteúdo cada vez mais completo.
+    </p>
+  </section>
+
+  <section class="about-section">
+    <h2>Receitas para experimentar e compartilhar</h2>
+    <p style="max-width: 65ch; color: var(--ink-soft);">
+      Acreditamos que cozinhar não precisa ser complicado. Uma boa receita
+      pode ensinar uma técnica, apresentar um ingrediente novo ou
+      simplesmente proporcionar um bom momento ao redor da mesa.
+    </p>
+    <p style="max-width: 65ch; color: var(--ink-soft);">
+      Por isso, o propósito do Receitas Baio é simples: compartilhar
+      receitas, incentivar a experimentação e tornar a cozinha um lugar
+      ainda mais interessante para aprender e criar.
+    </p>
+  </section>
+
+  <section class="about-section about-closing">
+    <h2>Seja bem-vindo ao Receitas Baio</h2>
+    <p style="max-width: 65ch; color: var(--ink-soft);">
+      Este é um projeto que está crescendo junto com uma jornada dentro da
+      gastronomia. Explore as receitas, coloque a mão na massa e adapte cada
+      preparação ao seu estilo.
+    </p>
+    <p class="about-tagline">
+      Receitas Baio — uma jornada de aprendizado, cozinha e compartilhamento.
+    </p>
+  </section>
 </Layout>
+
+<style>
+  .about-section {
+    padding: 1.6rem 0;
+    border-top: 1px solid var(--line);
+  }
+
+  .about-section p + p {
+    margin-top: 0.9rem;
+  }
+
+  .about-closing {
+    margin-bottom: 1rem;
+  }
+
+  .about-tagline {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 1.15rem;
+    color: var(--ink);
+    margin-top: 1.2rem;
+  }
+</style>
