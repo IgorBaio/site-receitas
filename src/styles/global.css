@@ -153,9 +153,16 @@ a { color: inherit; text-decoration: none; }
   font-size: 1.3rem;
 }
 
+.recipe-card-link {
+  display: flex;
+}
+
 /* ---- cartão de receita: cartão de índice com borda rasgada ---- */
 .recipe-card {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
   background: var(--surface);
   border: 1px solid var(--line);
   padding: 1.4rem 1.2rem 1.2rem;
@@ -195,6 +202,12 @@ a { color: inherit; text-decoration: none; }
 .recipe-card h3 {
   font-size: 1.25rem;
   margin-bottom: 0.3rem;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  overflow: hidden;
+  min-height: 2.2em;
 }
 
 .recipe-meta {
@@ -203,7 +216,8 @@ a { color: inherit; text-decoration: none; }
   font-family: var(--font-mono);
   font-size: 0.72rem;
   color: var(--ink-soft);
-  margin-top: 0.5rem;
+  margin-top: auto;
+  padding-top: 0.5rem;
 }
 
 .grid {
@@ -225,6 +239,15 @@ a { color: inherit; text-decoration: none; }
   border: none;
 }
 .btn:hover { background: var(--accent); }
+
+.recipe-hero {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border: 1px solid var(--line);
+  margin-bottom: 2rem;
+}
 
 .recipe-content a {
   color: var(--accent);

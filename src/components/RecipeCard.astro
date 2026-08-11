@@ -13,7 +13,7 @@ const { slug, title, categoria, dificuldade, tempoPreparo, imagemCapa } = Astro.
 const imageSrc = `${base}${imagemCapa.replace(/^\/+/, '')}`;
 ---
 
-<a href={`${base}receitas/${slug}/`}>
+<a href={`${base}receitas/${slug}/`} class="recipe-card-link">
   <article class="recipe-card">
     <span class="tag">{categoria}</span>
     <img src={imageSrc} alt={title} />
