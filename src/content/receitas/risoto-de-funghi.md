@@ -1,7 +1,7 @@
 ---
 title: "Risoto de Funghi"
 data: 2026-08-06
-categoria: "massas"
+categoria: "prato-principal"
 dificuldade: "médio"
 tempoPreparo: 40
 porcoes: 4
