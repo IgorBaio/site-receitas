@@ -32,4 +32,4 @@ destaque: false
 
 ## Notas
 
-Essa é a versão feita no fogão, ideal para servir 4 pessoas de uma vez. Para uma versão individual e mais rápida (feita direto na caneca com água fervente), veja a receita "Chocolate Quente na Caneca".
+Essa é a versão feita no fogão, ideal para servir 4 pessoas de uma vez. Para uma versão individual e mais rápida (feita direto na caneca com água fervente), veja a receita [Chocolate Quente na Caneca](/receitas/chocolate-quente-caneca/).
