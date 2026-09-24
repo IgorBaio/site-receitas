@@ -5,7 +5,7 @@ categoria: "prato-principal"
 dificuldade: "médio"
 tempoPreparo: 35
 porcoes: 4
-imagemCapa: "/images/yakissoba-carne-cogumelos.jpg"
+imagemCapa: "/images/yakissoba.jpg"
 tags: ["japonês", "massa", "carne"]
 ingredientes:
   - "500g de massa de macarrão para yakissoba"
